@@ -1,0 +1,28 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    background-color: #ebebeb;
+}
+
+.login-row {
+    width: 35%;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+@media  only screen and (max-width: 1024px){
+    .login-row {
+        width: 50%;
+    }
+}
+
+@media  only screen and (max-width: 768px){
+    .login-row {
+        width: 90%;
+    }
+}

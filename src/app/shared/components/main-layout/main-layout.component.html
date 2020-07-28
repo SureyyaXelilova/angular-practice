@@ -1,0 +1,89 @@
+<div class="common-container">
+    <a 
+        class="toggle"  
+        [class.nav-toggle-btn]="toggle" 
+        (click)="toggle = !toggle"
+    >
+        <i></i>
+    </a>
+    <div class="sidebar client-sidebar"  [class.nav-toggle-sidebar]="toggle">
+        <div class="logo">
+            <a href="index.html"><img src="./../../../../assets/images/logo.png" alt=""></a>
+            <h3>Makeup.com</h3>
+            <p>{{'logoDescription' | translate}}</p>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#">{{ 'home' | translate }}</a></li>
+                <li><a href="#about">{{ 'about' | translate }}</a></li>
+                <li><a href="#team">{{ 'team' | translate }}</a></li>
+                <li><a href="#products">{{ 'products' | translate }}</a></li>
+                <li><a href="#home-blog">{{ 'blog' | translate }}</a></li>
+                <li><a href="#contact">{{ 'contact' | translate }}</a></li>
+            </ul>
+        </nav>
+        
+        <div class="dropdown custom-user-dropdown">
+            <img src="../../../../assets/images/avatar.png" alt="avatar">
+            <div class="dropdown-menu"  *ngIf="!authService.isAuthenticated(); else sidebarUserIcon">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">{{ 'login' | translate }}</a>
+            </div>
+            <ng-template #sidebarUserIcon>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item user-email" href="#" *ngIf="authService.currentUser.email">{{authService.currentUser.email}}</a>
+                    <a class="dropdown-item" [routerLink]="['/orders']">{{ 'orders' | translate }}</a>
+                    <a class="dropdown-item" href="#">{{ 'profile' | translate }}</a>
+                    <a class="dropdown-item" href="#" (click)="logout()">{{ 'exit' | translate }}</a>
+                </div>
+            </ng-template>
+        </div>
+        <div class="dropdown custom-user-dropdown ml-25 ml-15-1258">
+            <img src="../../../../assets/images/globe.png" alt="globe">
+            <div class="dropdown-menu language-row">
+                <a 
+                    *ngFor="let item of languageService.allLanguages()" 
+                    class="dropdown-item"
+                    [class.langActive]="item.active"
+                    (click)="languageService.setLanguage(item.lang)"
+                >{{item.lang}}
+                </a>
+            </div>
+        </div>
+        <div class="custom-user-dropdown ml-25 ml-15-1258">
+            <a [routerLink]="['/favorites']" *ngIf="authService.isAuthenticated(); else favoritesIcon">
+                <img src="../../../../assets/images/heart.png" alt="heart" class="user-icon" >
+            </a>
+            <ng-template #favoritesIcon>
+                <a href="#" data-toggle="modal" data-target="#myModal">
+                    <img src="../../../../assets/images/heart.png" alt="heart" class="user-icon" >
+                </a>
+            </ng-template>
+        </div>
+        <div class="custom-user-dropdown ml-25 ml-15-1258">
+            <a [routerLink]="['/basket']" class="sidebar-basket-row" *ngIf="authService.isAuthenticated(); else ordersIcon">
+                <img src="../../../../assets/images/shopper.png" alt="shopper" class="user-icon">
+                <span 
+                    class="basket-item-count" 
+                    *ngIf="authService.isAuthenticated()  && basketService.basketItemCount > 0"
+                >
+                    {{basketService.basketItemCount}}
+                </span>
+            </a>
+            <ng-template #ordersIcon>
+                <a href="#" data-toggle="modal" data-target="#myModal">
+                    <img src="../../../../assets/images//shopper.png" alt="heart" class="user-icon" >
+                </a>
+            </ng-template>
+        </div>
+      
+    </div>
+    <div class="main-section client-main-section" [class.nav-toggle-main]="toggle">
+        <router-outlet></router-outlet>
+        <app-alert></app-alert>
+        <app-auth-modal></app-auth-modal>
+        <app-footer-page></app-footer-page>
+    </div>
+</div>
+
+
+

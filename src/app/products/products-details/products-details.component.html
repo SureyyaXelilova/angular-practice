@@ -1,0 +1,60 @@
+<div class="container-fluid plr-0" id="about">
+    <div class="child-section-row">
+        <app-client-title [title]="'makeupDetails'" [description]="'makeupDesc'"></app-client-title>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 about-image-row">
+                <div class="blog-container">
+                    <div class="blog-img-row">
+                        <img [src]="product.imageUrl" alt="service">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 about-image-text-row">
+                <div class="blog-container">
+                    <div class="blog-text-row"> 
+                        <div class="product-name-row">
+                            <span class="brand-name">{{product.brandName}}</span>
+                            <span class="product-name">{{product.name}}</span>
+                        </div>
+                        <div class="product-price-row">
+                            <span>{{product.price}} AZN </span>
+                        </div>
+                        <div class="df-jcsb">
+                            <p  
+                                class="btn btn-contact addtocard-btn addtocard-btn-details" 
+                                (click)="addToCard(product)"
+                                *ngIf="authService.isAuthenticated(); else modalBtnAddToCard"
+                            >
+                                {{ 'addToCard' | translate }}
+                            </p>
+                            <ng-template #modalBtnAddToCard>
+                                <p  
+                                    class="btn btn-contact addtocard-btn" 
+                                    data-toggle="modal" 
+                                    data-target="#myModal"
+                                >
+                                    {{ 'addToCard' | translate }}
+                                </p>
+                            </ng-template>
+                            <div class="favorite-row favorite-row-details">
+                                <i 
+                                    (click)="addToFavorites(product)"
+                                    [class.favorited-product]="favoritesService.checkFavoritedProduct(product.id)"
+                                    *ngIf="authService.isAuthenticated(); else modalBtnFavorite"
+                                ></i>
+                                <ng-template #modalBtnFavorite>
+                                    <i  
+                                        data-toggle="modal" 
+                                        data-target="#myModal"
+                                    ></i>
+                                </ng-template>
+                            </div>
+                        </div>
+                        <div class="product-description-row" [innerHTML]="product.description"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

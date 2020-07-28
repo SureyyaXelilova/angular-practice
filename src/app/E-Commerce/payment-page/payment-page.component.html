@@ -1,0 +1,56 @@
+<div class="container-fluid" id="home-blog">
+    <div class="child-section-row">
+        <app-client-title [title]="'completeShopping'" [description]=""></app-client-title>
+        <div class="row">
+            <div class="col-md-12 col-lg-9 mb-35">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="contaxt-input-row">
+                        <input 
+                            class="mt-0"
+                            type="text" 
+                            placeholder="{{ 'phone' | translate }}" 
+                            formControlName="phone"
+                        >
+                        <div 
+                            *ngIf="form.get('phone').touched && form.get('phone').invalid"
+                            class="validation"
+                        >
+                            <small  *ngIf="form.get('phone').errors.required">Phone is required</small>
+                        </div>
+                    </div>
+                    <div class="contaxt-input-row">
+                        <textarea 
+                            cols="30" 
+                            rows="10" 
+                            placeholder="{{ 'address' | translate }}"
+                            formControlName="addressDetails"
+                        ></textarea>
+                        <div 
+                            *ngIf="form.get('addressDetails').touched && form.get('addressDetails').invalid"
+                            class="validation"
+                        >
+                            <small *ngIf="form.get('addressDetails').errors.required">Address Details is required</small>
+                        </div>
+                    </div>
+                    <div class="contaxt-input-row">
+                        <label class="container-checkbox">{{ 'paymentMethod' | translate }}
+                            <input type="checkbox" checked="checked" disabled>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="contaxt-input-row">
+                        <input 
+                            type="submit" 
+                            class="btn btn-contact" 
+                            value="{{ 'pay' | translate }}"
+                            [disabled]="form.invalid"
+                        > 
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12 col-lg-3">
+                <app-basket-info></app-basket-info>
+            </div>
+        </div>
+    </div>
+</div>

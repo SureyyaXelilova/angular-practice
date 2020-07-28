@@ -1,0 +1,11 @@
+.header-container {
+    background: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+.header-container p{
+    margin: 0px;
+    cursor: pointer;
+}

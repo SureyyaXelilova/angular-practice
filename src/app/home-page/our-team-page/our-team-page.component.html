@@ -1,0 +1,24 @@
+<div class="container-fluid plr-0" id="team">
+    <div class="child-section-row background-grey">
+        <app-client-title [title]="'team'" [description]="'logoDescription'"></app-client-title>
+        <div class="row">
+            <div class="col-md-12 col-lg-6"  *ngFor="let sTeam of team">
+                <div class="team-container">
+                    <div class="team-img-row">
+                        <img [src]="sTeam.imageUrl" alt="team">
+                    </div>
+                    <div class="team-text-row">
+                        <h6>{{sTeam.fullName[languageService.currentLang]}}</h6>
+                        <!-- <span>Makeup Specialist</span> -->
+                        <p  [innerHTML]="sTeam.text[languageService.currentLang] | htmlContent"></p>
+                        <div class="team-social-row">
+                            <a href="#" class="icon"> <i class="ti ti-pinterest"></i> </a>
+                            <a href="#" class="icon"> <i class="ti ti-twitter"></i> </a>
+                            <a href="#" class="icon"> <i class="ti ti-instagram"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

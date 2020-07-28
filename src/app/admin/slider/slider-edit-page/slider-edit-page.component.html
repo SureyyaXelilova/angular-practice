@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-child-section">
+                <div class="form-container">
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="form-group">
+                            <div class="preview-image-container">
+                                <img [src]="imgSrc" alt="img" (click)="fileUploader.click()">
+                            </div>
+                            <input type="file" accept="image/*" #fileUploader (change)="onFileSelect($event)" #fileUploader formControlName="imageUrl">
+                        </div>
+                        <button type="submit" class="btn btn-contact admin-btn" [disabled]="form.invalid || submitted">
+                            <a>Update</a>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

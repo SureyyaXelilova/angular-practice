@@ -1,0 +1,77 @@
+{
+    "hello":"Privet",
+    "english": "English ru",
+    "azerbaijan": "Azerbaijan ru",
+    "logoDescription": "Всё о красоте",
+    "home":"Главная",
+    "about":"О нас",
+    "products": "Товары",
+    "blog":"Блог",
+    "contact":"Контакт",
+    "login":"Войти",
+    "orders":"Мои заказы",
+    "profile":"Профиль",
+    "exit":"Выйти",
+
+    "slideTitle": "100 beauty-советов на все времена",
+    "slideDesc": "Часть I",
+    "slideBtn": "Читайте сейчас",
+
+    "team": "Наша команда",
+
+    "makeupDesc": "Выбирайте своего любимого косметику",
+    "makeupDetails":"Детали о товара",
+    "blogDesc":"Эти статьи может интересовать вас",
+    "allPosts": "Все посты",
+    "search":"Поиск",
+
+    "contactUs": "Связаться с нами",
+    "contactUsDesc": "Вы можете написать нам если у вас возникает какой-то вопрос",
+    "phone": "Телефон",
+    "address": "Адрес",
+    "email": "Эл. адрес",
+    "openingTime": "пон-пят: 08.00 - 19.00",
+    "closingTime":"Вос: Закрыто",
+    "name": "Имя",
+    "message": "Сообщение",
+    "submit": "Отправить",
+    "footerDesc":"Все права защищены",
+
+    "addToCard": "Добавить в корзину",
+    "allGoods": "Все товары",
+
+    "aboutOrder": "О заказе",
+    "commonPrice": "Общий",
+    "cargo": "Карго",
+    "completeShopping": "Завершить покупку",
+
+    "emptyBasket": "Ваша корзина пуста",
+    "emptyBasketDesc": "В вашей корзине товар не найден, чтобы начать покупку кликните на 'Начать покупку'",
+    "emptyBasketBtn": "Начать покупку",
+
+    "paymentMethod": "способ оплаты наличными",
+    "pay": "Оплатить",
+
+    "favoriteTitle":"Ваши любимые",
+    "favoriteDesc":"Поторопись купить свой любимый товар",
+    "emptyFavorite": "Ваша любимая страница пуста",
+    "emptyFavoriteDesc": "В вашей любимой странице товар не найден, чтобы начать покупку кликните на 'Начать покупку'",
+
+    "orderDesc":"Спасибо что заказали у нас",
+    "orderDate":"Дата заказа",
+    "orderCommonPrice":"Общая цена",
+    "cancelOrder":"Отменить заказ",
+    "emptyOrder": "У вас нет заказа",
+
+    "password": "Пароль",
+    "forgotPass": "Забыли пароль ?",
+    "createNewAccout": "Создать новый аккаунт",
+    "confirmPassword": "Подтвердите пароль",
+    "register": "Пегистр",
+    "restorePassword": "Восстановить пароль",
+    "sendOobCode": "Отправить код oob",
+    "changePassword": "Сменить пароль",
+ 
+    "notFoundPage":"Страница не найдена"
+
+}

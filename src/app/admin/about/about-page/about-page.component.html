@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-child-section">
+                <div class="row admin-title-container">
+                    <div class="col-md-6">
+                        <h3>About Table</h3>
+                    </div>
+                    <div class="col-md-6 text-right">
+                      <p class="btn btn-contact admin-btn" [routerLink]="['/admin/about-create']">
+                        <a>Create</a>
+                      </p>
+                    </div>
+                </div>
+                <div class="table-container" *ngIf="about.length; else loading">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Text</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let sAbout of about; let id = index">
+                            <td>{{id + 1}}</td>
+                            <td>{{sAbout.text.az}}</td>
+                            <td>{{sAbout.date | date: 'medium'}}</td>
+                            <td>
+                              <img 
+                                src="../../../../assets/images/edit-icon.png" 
+                                alt="edit-icon" 
+                                class="admin-action-icon mr-10"
+                                [routerLink]="['/admin', 'about-edit', sAbout.id]"
+                              >
+                              <img 
+                                src="../../../../assets/images/delete-icon.png" 
+                                alt="delete-icon" 
+                                class="admin-action-icon"
+                                (click)="remove(sAbout.id)"
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <ng-template #loading>
+                  <div class="loading-container">
+                    <p class="text-center">About is loading</p>
+                  </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

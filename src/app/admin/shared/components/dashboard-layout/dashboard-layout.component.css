@@ -1,0 +1,59 @@
+.mr-10{
+    margin-right: 10px;
+}
+.admin-sidebar{
+    width: 20%;
+    padding: 30px 32px 15px 30px;
+    background: #2A3F54;
+}
+.admin-title-container h2{
+    color: #2A3F54;
+}
+.admin-main-section{
+    width: 80%;
+    min-height: 100vh;
+    background-color: #ebebeb;
+}
+.form-container {
+    width: 50%;
+}
+.preview-image-container {
+    width: 60%;
+}
+.admin-child-section{
+    background: #FFFFFF;
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+.admin-action-icon{
+    width: auto !important;
+    cursor: pointer;
+}
+.tab-content{
+    padding-top: 20px;
+}
+.tab-pane {
+    padding-left: 0px;
+}
+
+.admin-btn {
+    background-color: #2A3F54 !important;
+}
+/* .admin-btn:hover {
+    background-color: #ebebeb  !important;
+} */
+.collapse-btn {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-right: 25px;
+    margin-top: 6px;
+}
+.admin-order-date-row{
+    width: calc(100% - 24px);
+}
+@media only screen and (max-width: 992px){
+    .form-container {
+       width: 100%;
+    } 
+}

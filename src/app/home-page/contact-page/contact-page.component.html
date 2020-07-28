@@ -1,0 +1,122 @@
+<div class="container-fluid" id="contact">
+    <div class="child-section-row">
+        <app-client-title [title]="'contactUs'" [description]="'contactUsDesc'"></app-client-title>
+        <div class="row">
+            <div class="col-md-5 col-lg-5">
+                <div class="info-description-row">
+                    <div class="info-icon-row">
+                        <i class="ti ti-mobile"></i>
+                    </div>
+                    <div class="info-text-row"> 
+                        <h5>{{ 'phone' | translate }}</h5>
+                        <h6>(+992) 55 777 88 99</h6>
+                    </div>
+                </div>
+                <div class="info-description-row">
+                    <div class="info-icon-row">
+                        <i class="ti ti-location-pin"></i>
+                    </div>
+                    <div class="info-text-row"> 
+                        <h5>{{ 'address' | translate }}</h5>
+                        <h6>Сaspian Plaza Baku</h6>
+                    </div>
+                </div>
+                <div class="info-description-row">
+                    <div class="info-icon-row">
+                        <i class="ti ti-email"></i>
+                    </div>
+                    <div class="info-text-row"> 
+                        <h5>{{ 'email' | translate }}</h5>
+                        <h6>makeup@beauty.com</h6>
+                    </div>
+                </div>
+                <div class="info-description-row">
+                    <div class="info-icon-row">
+                        <i class="ti ti-alarm-clock"></i>
+                    </div>
+                    <div class="info-text-row"> 
+                        <h5>{{ 'openingTime' | translate }}</h5>
+                        <h6>{{ 'closingTime' | translate }}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-lg-7">
+                <div class="contact-form-container">
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contaxt-input-row">
+                                    <input 
+                                        type="text" 
+                                        placeholder="{{ 'name' | translate }}" 
+                                        formControlName="name"
+                                        [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('name').touched && form.get('name').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('name').errors.required">Name is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contaxt-input-row">
+                                    <input 
+                                        type="text" 
+                                        placeholder="{{ 'phone' | translate }}" 
+                                        formControlName="phone"
+                                        [ngClass]="{invalid: form.get('phone').touched && form.get('phone').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('phone').touched && form.get('phone').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('phone').errors.required">Phone is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="contaxt-input-row">
+                                    <textarea 
+                                        cols="30" 
+                                        rows="10" 
+                                        placeholder="{{ 'message' | translate }}"
+                                        formControlName="message"
+                                        [ngClass]="{invalid: form.get('message').touched && form.get('message').invalid}"
+                                    ></textarea>
+                                    <div 
+                                        *ngIf="form.get('message').touched && form.get('message').invalid"
+                                        class="validation"
+                                    >
+                                        <small *ngIf="form.get('message').errors.required">Message is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group" *ngIf="authService.isAuthenticated(); else modalContainer">
+                                    <input 
+                                        
+                                        type="submit" 
+                                        class="btn btn-contact" 
+                                        value="{{ 'submit' | translate }}"
+                                        [disabled]="form.invalid || submitted"
+                                    > 
+                                </div>
+                                <ng-template  #modalContainer>
+                                    <div class="form-group">
+                                        <a 
+                                            class="btn btn-contact color-white"
+                                            data-toggle="modal" 
+                                            data-target="#myModal"
+                                         >{{ 'submit' | translate }}</a>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

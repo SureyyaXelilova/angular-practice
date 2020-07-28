@@ -1,0 +1,42 @@
+<div class="container-fluid" id="home-blog">
+    <div class="child-section-row">
+        <app-client-title [title]="'favoriteTitle'" [description]="'favoriteDesc'"></app-client-title>
+        <div class="row"  *ngIf="favoritesService.getFavorites().length > 0; else emptyContainer">
+            <div class="col-md-4" *ngFor="let favorite of favoritesService.getFavorites()">
+                <div class="favorite-row unfovarit-row">
+                    <i (click)="addToFavorites(favorite)"></i>
+                </div>
+                <a [routerLink]="['/product', favorite.id]" >
+                    <div class="blog-container">
+                        <div class="blog-img-row">
+                            <img [src]="favorite.imageUrl" alt="favorite-img">
+                        </div>
+                        <div class="blog-text-row"> 
+                            <div class="product-name-row">
+                                <span class="brand-name">{{favorite.brandName}}</span>
+                                <span class="product-name">{{favorite.name}}</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span>{{favorite.price}} AZN</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <ng-template #emptyContainer>
+            <div class="row">
+                <div class="col-md-12 empty-container">
+                    <img src="../../assets/images/heart.svg" alt="heart">
+                    <h3>{{ 'emptyFavorite' | translate }}</h3>
+                    <p>{{ 'emptyFavoriteDesc' | translate }}</p>
+                    <p class="btn btn-contact" [routerLink]="['/products']">
+                        {{ 'emptyBasketBtn' | translate }}
+                    </p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+

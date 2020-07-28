@@ -1,0 +1,10 @@
+<app-slider-page></app-slider-page>
+<app-about-us-page></app-about-us-page>
+<app-our-team-page></app-our-team-page>
+<app-products-page [homePage]="'false'">
+    <div class="col-md-12 text-center">
+        <a class="btn btn-contact" [routerLink]="['/products']">{{ 'allGoods' | translate }}</a>
+    </div>
+</app-products-page>
+<app-home-blog-page></app-home-blog-page>
+<app-contact-page></app-contact-page>

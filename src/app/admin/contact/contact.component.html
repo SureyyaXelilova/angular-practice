@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-child-section">
+                <div class="row admin-title-container">
+                    <div class="col-md-12">
+                        <h3>Contact Table</h3>
+                    </div>
+                </div>
+                <div class="row form-group justify-content-start">
+                  <div class="col-md-4">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Search..."
+                      [(ngModel)]="searchStr"
+                    >
+                  </div>
+                </div>
+                <div class="table-container" *ngIf="contacts.length; else loading">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let contact of contacts | searchContact:searchStr; let id = index">
+                            <td>{{id + 1}}</td>
+                            <td>{{contact.name}}</td>
+                            <td>{{contact.phone}}</td>
+                            <td>{{contact.message}}</td>
+                            <td>{{contact.date | date: 'medium'}}</td>
+                            <td>
+                                <img 
+                                    src="../../../../assets/images/delete-icon.png" 
+                                    alt="delete-icon" 
+                                    class="admin-action-icon"
+                                    (click)="remove(contact.id)"
+                                >
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <ng-template #loading>
+                  <div class="loading-container">
+                    <p class="text-center">Contact is loading</p>
+                  </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

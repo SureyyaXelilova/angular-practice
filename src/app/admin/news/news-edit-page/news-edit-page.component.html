@@ -1,0 +1,184 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-child-section">
+                <div class="form-container">
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="form-group">
+                            <div class="preview-image-container">
+                                <img [src]="imgSrc" alt="img" (click)="fileUploader.click()">
+                            </div>
+                            <input 
+                                type="file" 
+                                accept="image/*" 
+                                #fileUploader 
+                                (change)="onFileSelect($event)" 
+                                formControlName="imageUrl"
+                            >
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" data-target="#az" href="#az">Azerbaijan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" data-target="#ru" href="#ru">Russian</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" data-target="#en" href="#en">English</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active container" id="az">
+                                <div class="form-group">
+                                    <label for="title_az">Title Az:</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Enter Title" 
+                                        id="title_az" 
+                                        formControlName="title_az"
+                                        [ngClass]="{invalid: form.get('title_az').touched && form.get('title_az').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('title_az').touched && form.get('title_az').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('title_az').errors.required">Title Az is required</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="author_az">Author Az</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Enter Author Az" 
+                                        id="author_az" 
+                                        formControlName="author_az"
+                                        [ngClass]="{invalid: form.get('author_az').touched && form.get('author_az').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('author_az').touched && form.get('author_az').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('author_az').errors.required">Author Az is required</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Text Az</label>
+                                    <quill-editor formControlName="text_az"></quill-editor>
+                                    <div 
+                                        *ngIf="form.get('text_az').touched && form.get('text_az').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('text_az').errors.required">Text Az is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container" id="ru">
+                                <div class="form-group">
+                                    <label for="title_ru">Title Ru:</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Enter Title" 
+                                        id="title_ru" 
+                                        formControlName="title_ru"
+                                        [ngClass]="{invalid: form.get('title_ru').touched && form.get('title_ru').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('title_ru').touched && form.get('title_ru').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('title_ru').errors.required">Title Ru is required</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="author_ru">Author Ru</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Enter Author Ru" 
+                                        id="author_ru" 
+                                        formControlName="author_ru"
+                                        [ngClass]="{invalid: form.get('author_ru').touched && form.get('author_ru').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('author_ru').touched && form.get('author_ru').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('author_ru').errors.required">Author Ru is required</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Text Ru</label>
+                                    <quill-editor formControlName="text_ru"></quill-editor>
+                                    <div 
+                                        *ngIf="form.get('text_ru').touched && form.get('text_ru').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('text_ru').errors.required">Text Ru is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane  container" id="en">
+                                <div class="form-group">
+                                    <label for="title_en">Title En:</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Enter Title" 
+                                        id="title_en" 
+                                        formControlName="title_en"
+                                        [ngClass]="{invalid: form.get('title_en').touched && form.get('title_en').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('title_en').touched && form.get('title_en').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('title_en').errors.required">Title En is required</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="author_en">Author En</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Enter Author En" 
+                                        id="author_en" 
+                                        formControlName="author_en"
+                                        [ngClass]="{invalid: form.get('author_en').touched && form.get('author_en').invalid}"
+                                    >
+                                    <div 
+                                        *ngIf="form.get('author_en').touched && form.get('author_en').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('author_en').errors.required">Author En is required</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Text En</label>
+                                    <quill-editor formControlName="text_en"></quill-editor>
+                                    <div 
+                                        *ngIf="form.get('text_en').touched && form.get('text_en').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('text_en').errors.required">Text En is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-contact admin-btn" [disabled]="form.invalid || submitted">
+                            <a>Update</a>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

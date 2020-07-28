@@ -1,0 +1,78 @@
+{
+    "hello":"Hello",
+    "english": "English",
+    "azerbaijan": "Azerbaijan",
+    "logoDescription": "All about beauty",
+    "home":"Home",
+    "about":"About",
+    "products": "Goods",
+    "blog":"Blog",
+    "contact":"Contact",
+    "login":"Login",
+    "orders":"My Orders",
+    "profile":"Profile",
+    "exit":"Exit",
+
+    "slideTitle": "100 beauty- tips for all time",
+    "slideDesc": "Part I",
+    "slideBtn": "Read now",
+
+    "team": "Our team",
+
+    "makeupDesc": "Choose your favorite makeup",
+    "makeupDetails":"Details of goods",
+    "blogDesc":"These articles may be interesting for you",
+    "allPosts": "All posts",
+    "search":"Seacrh",
+
+    "contactUs": "Contact Us",
+    "contactUsDesc": "You may write us when you have have a question",
+    "phone": "Telephone",
+    "address": "Address",
+    "email": "Email",
+    "openingTime": "Mon-Fri: 08.00 - 19.00",
+    "closingTime":"Sunday: Closed",
+    "name": "Name",
+    "message": "Message",
+    "submit": "Submit",
+    "footerDesc":"All rights reserved",
+
+    "addToCard": "Add to cart",
+    "allGoods": "All goods",
+
+    "aboutOrder": "About order",
+    "commonPrice": "Common",
+    "cargo": "Cargo",
+    "completeShopping": "Complete shopping",
+
+    "emptyBasket": "Your shopping card is empty",
+    "emptyBasketDesc": "Not found goods in your shopping card, for starting shopping click to 'Start shopping'",
+    "emptyBasketBtn": "Start shopping",
+
+    "paymentMethod": "payment method by cash",
+    "pay": "Pay",
+
+    "favoriteTitle":"Your favorites",
+    "favoriteDesc":"Hurry up to buy your favorite product",
+    "emptyFavorite": "Your favorite page is empty",
+    "emptyFavoriteDesc": "Not found goods in your favorite page, for starting shopping click to 'Start shopping'",
+
+
+    "orderDesc":"Thanks for ordering from us",
+    "orderDate":"Date of order",
+    "orderCommonPrice":"Common price",
+    "cancelOrder":"Cancel order",
+    "emptyOrder": "You haven't any order",
+
+    "password": "Password",
+    "forgotPass": "Forgot password ?",
+    "createNewAccout": "Create New Accout",
+    "confirmPassword": "Confirm password",
+    "register": "Register",
+    "restorePassword": "Restore password",
+    "sendOobCode": "Send oob code",
+    "changePassword": "Change password",
+
+    "notFoundPage":"Page not found"
+
+  }

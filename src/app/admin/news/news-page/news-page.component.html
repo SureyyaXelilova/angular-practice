@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-child-section">
+                <div class="row admin-title-container">
+                    <div class="col-md-6">
+                        <h3>News Table</h3>
+                    </div>
+                    <div class="col-md-6 text-right">
+                      <p class="btn btn-contact admin-btn" [routerLink]="['/admin/news-create']">
+                        <a>Create</a>
+                      </p>
+                    </div>
+                </div>
+                <div class="row form-group justify-content-start">
+                  <div class="col-md-4">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Search..."
+                      [(ngModel)]="searchStr"
+                    >
+                  </div>
+                </div>
+                <div class="table-container" *ngIf="news.length; else loading">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let sNews of news | searchNewsPosts:searchStr; let id = index">
+                            <td>{{id + 1}}</td>
+                            <td>{{sNews.title.az}}</td>
+                            <td>{{sNews.author.az}}</td>
+                            <td>{{sNews.date | date: 'medium'}}</td>
+                            <td>
+                              <img 
+                                src="../../../../assets/images/edit-icon.png" 
+                                alt="edit-icon" 
+                                class="admin-action-icon mr-10"
+                                [routerLink]="['/admin', 'news-edit', sNews.id]"
+                              >
+                              <img 
+                                src="../../../../assets/images/delete-icon.png" 
+                                alt="delete-icon" 
+                                class="admin-action-icon"
+                                (click)="remove(sNews.id)"
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <ng-template #loading>
+                  <div class="loading-container">
+                    <p class="text-center">News is loading</p>
+                  </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

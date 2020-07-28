@@ -1,0 +1,95 @@
+<div class="modal-header m-custom-header-client">
+    <div class="child-section-title-row p-0">
+        <h2>{{ 'register' | translate }}</h2> 
+    </div>
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+    <div class="message-container">
+        <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+            <p>{{error}}</p>
+        </div>
+        <div class="alert alert-info" *ngIf="message">
+            <p>{{message}}</p>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="contact-form-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contaxt-input-row">
+                        <input
+                            type="text" 
+                            placeholder="{{ 'name' | translate }}" 
+                            id="name" 
+                            formControlName="name"
+                            [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}"
+                        >
+                        <div 
+                            *ngIf="form.get('name').touched && form.get('name').invalid"
+                            class="validation"
+                        >
+                            <small *ngIf="form.get('name').errors.required">Name is required</small>
+                            <small *ngIf="form.get('name').errors.email">Name is not correct</small>
+                        </div>
+                    </div>
+                    <div class="contaxt-input-row">
+                        <input
+                            type="email" 
+                            placeholder="{{ 'email' | translate }}" 
+                            id="email" 
+                            formControlName="email"
+                            [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+                        >
+                        <div 
+                            *ngIf="form.get('email').touched && form.get('email').invalid"
+                            class="validation"
+                        >
+                            <small *ngIf="form.get('email').errors.required">Email is required</small>
+                            <small *ngIf="form.get('email').errors.email">Email is not correct</small>
+                        </div>
+                    </div>
+                    <div class="contaxt-input-row">
+                        <input
+                            type="password" 
+                            placeholder="{{ 'password' | translate }}" 
+                            formControlName="password"
+                            [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+                        >
+                        <div 
+                            *ngIf="form.get('password').touched && form.get('password').invalid"
+                            class="validation"
+                        >
+                            <small *ngIf="form.get('password').errors.required">Password is required</small>
+                            <small *ngIf="form.get('password').errors.minlength">
+                                Password must be {{form.get('password').errors.minlength.requiredLength}},
+                                now it is {{form.get('password').errors.minlength.actualLength}}
+                            </small>
+                        </div>
+                    </div>
+                    <div class="contaxt-input-row">
+                        <input
+                            type="password" 
+                            placeholder="{{ 'confirmPassword' | translate }}" 
+                            formControlName="confirmPassword"
+                            [ngClass]="{invalid: form.get('confirmPassword').touched && form.get('confirmPassword').invalid}"
+                        >
+                        <div 
+                            *ngIf="form.get('confirmPassword').touched && form.get('confirmPassword').invalid"
+                            class="validation"
+                        >
+                            <small *ngIf="form.get('confirmPassword').errors.required">Confirm password is required</small>
+                            <small *ngIf="form.get('confirmPassword').errors.mustMatch">Confirm password must be mutch</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group flex-space-between">
+                        <button type="submit" class="btn btn-contact width-100" [disabled]="form.invalid || submitted">{{ 'register' | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    

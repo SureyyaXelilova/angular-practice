@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="login-container">
+                <div class="login-row">
+                    <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+                        <p>{{error}}</p>
+                    </div>
+                    <div class="alert alert-info" *ngIf="message">
+                        <p>{{message}}</p>
+                    </div>
+                    <div class="form-login-container">
+                        <form [formGroup]="form" (ngSubmit)="submit()">
+                            <div class="form-group">
+                                <label for="email">Email address:</label>
+                                <input 
+                                    type="email" 
+                                    class="form-control" 
+                                    placeholder="Enter email" 
+                                    id="email" 
+                                    formControlName="email"
+                                    [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+                                >
+                                <div 
+                                    *ngIf="form.get('email').touched && form.get('email').invalid"
+                                    class="validation"
+                                >
+                                    <small *ngIf="form.get('email').errors.required">Email is required</small>
+                                    <small *ngIf="form.get('email').errors.email">Email is not correct</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input 
+                                    type="password" 
+                                    class="form-control" 
+                                    placeholder="Enter password" 
+                                    id="pwd" 
+                                    formControlName="password"
+                                    [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+                                >
+                                <div 
+                                    *ngIf="form.get('password').touched && form.get('password').invalid"
+                                    class="validation"
+                                >
+                                    <small *ngIf="form.get('password').errors.required">Password is required</small>
+                                    <small *ngIf="form.get('password').errors.minlength">
+                                        Password must be {{form.get('password').errors.minlength.requiredLength}},
+                                        now it is {{form.get('password').errors.minlength.actualLength}}
+                                    </small>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" [disabled]="form.invalid || submitted">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="alert-wrap d-n"  [class.d-b] = "text">
+    <div
+        class="alert"
+        [class.alert-success] = "type === 'success'"
+        [class.alert-warning] = "type === 'warning'"
+        [class.alert-danger] = "type === 'danger'"
+  
+    >
+        <p>{{text}}</p>
+    </div>
+</div>

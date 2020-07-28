@@ -1,0 +1,103 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-child-section">
+                <div class="row admin-title-container">
+                    <div class="col-md-12">
+                        <h3>Users Table</h3>
+                    </div>
+                </div>
+                <div class="table-container">
+                  <div class="accordion" id="accordionExample">
+                    <div class="card" *ngFor="let user of users">
+                      <div class="card-header" id="headingOne">
+                          <div class="row order-info-row">
+                            <div class="col-12 df-jcsb">
+                                <img 
+                                  class="collapse-btn"
+                                  src="../../../assets/images/plus-icon.png" 
+                                  alt="plus-icon"
+                                  data-toggle="collapse" 
+                                  [attr.data-target]="'#'+ user.id" 
+                                  aria-expanded="true" 
+                                  [attr.aria-controls]='user.id'
+                                >
+                                <div class="admin-order-date-row">
+                                    <span class="order-info-title">User Name:  </span>
+                                    <span>{{user.userName}}</span>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  
+                      <div [id]='user.id' class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <h5>Basket Info:</h5>
+                          <div class="df-jcfs">
+                            <p class="order-info-title mr-20">Common price:</p>
+                            <p>{{user.basket.cardInfo.commonPrice}}</p>
+                          </div>
+                          <div class="df-jcfs">
+                            <p class="order-info-title mr-20">Item count:</p>
+                            <p>{{user.basket.cardInfo.itemCount}}</p>
+                          </div>
+                          <div class="df-jcfs">
+                            <p class="order-info-title mr-20">Last Update:</p>
+                            <p>{{user.basket.cardInfo.refreshTime | date:'fullDate' }}</p>
+                          </div>
+                          <h5>Basket Item:</h5>
+                          <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Brandname</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of user.basket.products; let id = index">
+                                    <td>{{id + 1}}</td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.brandName}}</td>
+                                    <td>{{product.price}}</td>
+                                    <td>{{product.quantity}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                          <br>
+                          <h5>Favorites</h5>
+                          <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Brandname</th>
+                                    <th>Price</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of user.favorites; let id = index">
+                                    <td>{{id + 1}}</td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.brandName}}</td>
+                                    <td>{{product.price}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ng-template #loading>
+                  <div class="loading-container">
+                    <p class="text-center">Orders is loading</p>
+                  </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+  </div>
+  

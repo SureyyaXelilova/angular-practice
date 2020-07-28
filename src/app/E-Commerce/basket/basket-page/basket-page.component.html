@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="child-section-row">
+        <app-client-title [title]="" [description]=""></app-client-title>
+        <div class="row" *ngIf="basketService.getBasket().length > 0; else emptyContainer">
+            <div class="basket-container col-md-12 col-lg-8">
+                <div class="basket-title-row mlr--15">
+                    <img src="../.././../../assets/images/basket-24.png" alt="basket icon">
+                </div>
+                <div class="row basket-border"  *ngFor="let basket of basketService.getBasket()">
+                    <div class="col-6 col-md-4 basket-product-container basket-row">
+                        <img [src]="basket.imageUrl" alt="basket-img">
+                        <div class="product-name-row">
+                            <span class="brand-name">{{basket.brandName}}</span>
+                            <span class="product-name">{{basket.name}}</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 basket-counter-container basket-row">
+                        <div class="counter-row">
+                            <button [disabled]="basket.quantity === 1" (click)="decreaseItemInBasket(basket.id, basket.quantity)">-</button>
+                            <input type="text" [value]="basket.quantity" disabled>
+                            <button (click)="increaseItemInBasket(basket.id)">+</button>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 basket-price-container basket-row">
+                        <p>{{basket.price}} AZN</p>
+                    </div>
+                    <div class="col-6 col-md-2 basket-remove-container basket-row">
+                        <img src="../../../../assets/images/delete-icon.png" alt="delete" (click)="removeItemFromBasket(basket.id)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12  col-lg-4 mlr--15 mlr-0">
+                <app-basket-info>
+                    <p class="btn btn-contact"><a [routerLink]="['/payment']">{{ 'completeShopping' | translate }}</a></p>
+                </app-basket-info>
+            </div>
+        </div>
+        <ng-template #emptyContainer>
+            <div class="row">
+                <div class="col-md-12 empty-container">
+                    <img src="../../assets/images/heart.svg" alt="heart">
+                    <h3>{{ 'emptyBasket' | translate }}</h3>
+                    <p>{{ 'emptyBasketDesc' | translate }}</p>
+                    <p class="btn btn-contact" [routerLink]="['/products']">
+                        {{ 'emptyBasketBtn' | translate }}
+                    </p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

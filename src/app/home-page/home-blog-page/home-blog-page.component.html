@@ -1,0 +1,24 @@
+<div class="container-fluid  plr-0" id="home-blog">
+    <div class="child-section-row background-grey">
+        <app-client-title [title]="'blog'" [description]="'blogDesc'"></app-client-title>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let sNews of news">
+                <div class="blog-container">
+                    <div class="blog-img-row">
+                        <img [src]="sNews.imageUrl" alt="news">
+                        <div class="blog-text-row"> 
+                            <span><a href="#">Makeup</a></span>
+                            <h4><a [routerLink]="['/blog', sNews.id]">{{sNews.title[languageService.currentLang]}}</a>
+                            </h4> <span class="text-right"><a href="#">{{sNews.date | date:'fullDate'}}</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <a [routerLink]="['/blog']"  class="btn btn-contact">
+                    {{ 'allPosts' | translate }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

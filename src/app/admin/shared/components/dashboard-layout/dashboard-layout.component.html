@@ -1,0 +1,38 @@
+<div class="common-container">
+    <a 
+        class="toggle"  
+        [class.nav-toggle-btn]="toggle" 
+        (click)="toggle = !toggle"
+    >
+        <i></i>
+    </a>
+    <div class="sidebar admin-sidebar"  [class.nav-toggle-sidebar]="toggle">
+        <div class="logo">
+            <a href="index.html"><img src="./../../../../assets/images/logo.png" alt=""></a>
+            <h3>Betty</h3>
+            <p>Admin Panel</p>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#" [routerLink]="['/admin', 'users']">Users</a></li>
+                <li><a href="#" [routerLink]="['/admin', 'orders']">Orders</a></li>
+                <li><a href="#" [routerLink]="['/admin', 'slider']">Slider</a></li>
+                <li><a href="#" [routerLink]="['/admin', 'about']">About</a></li>
+                <li><a href="#" [routerLink]="['/admin', 'team']">Team</a></li>
+                <li><a href="#" [routerLink]="['/admin', 'news']">News</a></li>
+                <li><a href="#" [routerLink]="['/admin', 'contacts']">Contact</a></li>
+                <li><a href="#" [routerLink]="['/admin', 'products']">Products</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-section admin-main-section" [class.nav-toggle-main]="toggle">
+        <app-header></app-header>
+        <app-alert></app-alert>
+        <app-loading></app-loading>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+
+

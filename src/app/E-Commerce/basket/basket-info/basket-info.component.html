@@ -1,0 +1,16 @@
+<div class="page-sidebar-container">
+    <div class="categories-container">
+        <h1>{{ 'aboutOrder' | translate }}</h1>
+        <div class="df-jcsb card-price-row">
+            <p>{{ 'commonPrice' | translate }}</p>
+            <p class="text-right">{{basketService.basketCommonPrice}} AZN</p>
+        </div>
+        <div class="df-jcsb card-price-row">
+            <p>{{ 'cargo' | translate }}</p>
+            <p class="text-right">0 AZN</p>
+        </div>
+        <hr>
+        <p class="common-price">{{basketService.basketCommonPrice}} AZN</p>
+        <ng-content></ng-content>
+    </div>
+</div>

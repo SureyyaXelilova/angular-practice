@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-child-section">
+                <div class="form-container">
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="form-group">
+                            <div class="preview-image-container">
+                                <img [src]="imgSrc" alt="img" (click)="fileUploader.click()">
+                            </div>
+                            <input 
+                                type="file" 
+                                accept="image/*" 
+                                #fileUploader 
+                                (change)="onFileSelect($event)" 
+                                formControlName="imageUrl"
+                            >
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" data-target="#az" href="#az">Azerbaijan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" data-target="#ru" href="#ru">Russian</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" data-target="#en" href="#en">English</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active container" id="az">
+                                <div class="form-group">
+                                    <label>Text Az</label>
+                                    <quill-editor formControlName="text_az"></quill-editor>
+                                    <div 
+                                        *ngIf="form.get('text_az').touched && form.get('text_az').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('text_az').errors.required">Text Az is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container" id="ru">
+                                <div class="form-group">
+                                    <label>Text Ru</label>
+                                    <quill-editor formControlName="text_ru"></quill-editor>
+                                    <div 
+                                        *ngIf="form.get('text_ru').touched && form.get('text_ru').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('text_ru').errors.required">Text Ru is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane  container" id="en">
+                                <div class="form-group">
+                                    <label>Text En</label>
+                                    <quill-editor formControlName="text_en"></quill-editor>
+                                    <div 
+                                        *ngIf="form.get('text_en').touched && form.get('text_en').invalid"
+                                        class="validation"
+                                    >
+                                        <small  *ngIf="form.get('text_en').errors.required">Text En is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-contact admin-btn" [disabled]="form.invalid || submitted">
+                            <a>Create</a>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

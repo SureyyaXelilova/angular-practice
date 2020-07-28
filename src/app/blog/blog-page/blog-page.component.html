@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="child-section-row">
+        <app-client-title [title]="'blog'" [description]="'blogDesc'"></app-client-title>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-container" *ngFor="let sNews of news | searchNewsPosts:searchStr;">
+                    <div class="blog-img-row">
+                        <img [src]="sNews.imageUrl" alt="news">
+                        <div class="blog-text-row"> 
+                            <h4><a [routerLink]="['/blog', sNews.id]">{{sNews.title[languageService.currentLang]}}</a>
+                            </h4> <span class="text-right"><a href="#">{{sNews.date | date:'fullDate'}}</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="page-sidebar-container">
+                    <div class="search-container">
+                        <input type="text" placeholder="{{ 'search' | translate }}"  [(ngModel)]="searchStr">
+                        <button type="submit" class="ti ti-arrow-right search-submit"></button>
+                    </div>
+                    <!-- <div class="categories-container">
+                        <h1>Categories</h1>
+                        <nav class="categories-nav">
+                            <ul>
+                                <li><a href="#">Barber</a></li>
+                                <li><a href="#">Hairstyle</a></li>
+                                <li><a href="#">Makeup</a></li>
+                                <li><a href="#">Cosmetics</a></li>
+                            </ul>
+                        </nav>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

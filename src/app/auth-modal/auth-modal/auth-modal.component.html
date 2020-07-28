@@ -1,0 +1,11 @@
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content plr-40">
+            <app-login 
+                (changeSRegister)="changeSRegister($event)" 
+                *ngIf="sLogin"
+            ></app-login>
+            <app-register *ngIf="sRegister"></app-register>
+        </div>
+    </div>
+</div>

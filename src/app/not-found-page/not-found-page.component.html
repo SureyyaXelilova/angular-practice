@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="child-section-row">
+        <app-client-title [title]="" [description]=""></app-client-title>
+        <div class="row">
+            <div class="col-md-12 empty-container">
+                <img src="../../assets/images/heart.svg" alt="heart">
+                <h3>404</h3>
+                <p>{{ 'notFoundPage' | translate }}</p>
+                <p class="btn btn-contact" [routerLink]="['/']">
+                    {{ 'home' | translate }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

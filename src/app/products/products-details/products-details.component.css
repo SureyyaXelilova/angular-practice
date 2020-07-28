@@ -1,0 +1,12 @@
+.addtocard-btn-details {
+    width: calc(100% - 60px) !important;
+}
+.favorite-row-details {
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+.product-description-row {
+    overflow-y: auto;
+    overflow-x: hidden;
+}

@@ -1,0 +1,36 @@
+.info-description-row {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+}
+.info-icon-row {
+    width: 50px;
+    height: 50px;
+}
+.info-text-row {
+    overflow: hidden;
+    padding-left: 8px;
+}
+.info-icon-row i{
+    line-height: 50px;
+    font-size: 40px;
+    color: #e52e71;
+}
+.info-text-row h5 {
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: 'Rambla', sans-serif;
+    color: #000;
+}
+.info-text-row h6 {
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    font-family: 'Rambla', sans-serif;
+}
+.color-white{
+    color: #ffffff !important;
+}
+

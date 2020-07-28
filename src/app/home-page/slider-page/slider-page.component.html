@@ -1,0 +1,23 @@
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item custom-slider-item active" style="background-image: url('../../../assets/images/slider-02.jpg');">
+            <div class="slider-description-row"  [@slideInDown]="slideInDown">
+                <h1>{{'slideTitle' | translate}}</h1>
+                <p>{{'slideDesc' | translate}}</p>
+                <div class="btn btn-contact">
+                    <a href="#about">{{'slideBtn' | translate}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item custom-slider-item" style="background-image: url('../../../assets/images/slider-03.jpg');">
+            <div class="slider-description-row"  [@slideInDown]="slideInDown">
+                <h1>{{'slideTitle' | translate}}</h1>
+                <p>{{'slideDesc' | translate}}</p>
+                <div class="btn btn-contact">
+                    <a href="#about">{{'slideBtn' | translate}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

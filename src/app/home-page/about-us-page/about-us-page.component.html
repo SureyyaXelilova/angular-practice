@@ -1,0 +1,15 @@
+<div class="container-fluid plr-0" id="about">
+    <div class="child-section-row">
+        <app-client-title [title]="'about'" [description]="'logoDescription'"></app-client-title>
+        <div class="row" *ngFor="let sAbout of about">
+            <div class="col-sm-12 col-md-6 about-image-row">
+                <img [src]="sAbout.imageUrl" alt="about-image">
+            </div>
+            <div class="col-sm-12 col-md-6 about-image-text-row">
+                <p [innerHTML]="sAbout.text[languageService.currentLang] | htmlContent"></p>
+                <br>
+                <h2 class="about-heading">Makeup.com<br><span>Salon Owner</span></h2>
+            </div>
+        </div>
+    </div>
+</div>

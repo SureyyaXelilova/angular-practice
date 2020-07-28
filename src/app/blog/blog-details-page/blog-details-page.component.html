@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row child-section-row">
+        <div class="col-md-12 pt-55">
+            <div class="blog-details-container">
+                <div class="blog-details-img-row">
+                    <img src="../../assets/images/blog-1.jpg" alt="service">
+                    <div class="blog-details-text-row"> 
+                        <h4>{{news.title[languageService.currentLang]}}</h4>
+                        <p [innerHTML]="news.text[languageService.currentLang] | htmlContent"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

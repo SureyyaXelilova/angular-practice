@@ -1,0 +1,78 @@
+{
+    "hello":"Salam",
+    "english": "Ingilis",
+    "azerbaijan": "Azerbaycan",
+    "logoDescription": "Gözəllik haqqinda her şey",
+    "home":"Ana səhifə",
+    "about":"Haqqımızda",
+    "products": "Məhsullar",
+    "blog":"Blog",
+    "contact":"Əlaqə",
+    "login":"Giriş",
+    "orders":"Sifarişlərim",
+    "profile":"Profil",
+    "exit":"Çıxış",
+
+    "slideTitle": "Bütün dövrlər üçün 100 məsləhət",
+    "slideDesc": "Birinci hissə",
+    "slideBtn": "İndi oxuyun",
+
+    "team": "Komanda",
+
+    "makeupDesc": "Sevdiyiniz makiyaj vasitəsini secin",
+    "makeupDetails":"Məhsul haqqında",
+    "blogDesc": "Bu məqalələr sizin üçün maraqlı ola bilər",
+    "allPosts": "Bütün postlar",
+    "search":"Axtarış",
+
+    "contactUs": "Bizimlə əlaqə",
+    "contactUsDesc": "Hər hansı sual yarandıgında bizə yaza bilərsiz",
+    "phone": "Telefon",
+    "address": "Ünvan",
+    "email": "Email",
+    "openingTime": "B e.-Ş : 08.00 - 19.00",
+    "closingTime":"Bazar: Bağlıdır",
+    "name": "Ad",
+    "message": "Mesaj",
+    "submit": "Göndər",
+    "footerDesc":"Bütün hüquqlar qorunub",
+
+    "addToCard": "Səbətə at",
+    "allGoods": "Bütün məhsullar",
+
+    
+    "aboutOrder": "Sifariş haqqında",
+    "commonPrice": "Ümumi",
+    "cargo": "Karqo",
+    "completeShopping": "Alışverişi tamamlayın",
+
+    "emptyBasket": "Sizin səbətiniz boşdur",
+    "emptyBasketDesc": "Sizin səbətinizdə məshul tapılmadı, alişverişə başlamaq üçün 'Alışverişə başla' düyməsinə klik edin",
+    "emptyBasketBtn": "Alışverişə başla",
+
+    "paymentMethod": "ödəniş üsulu yalnız nəğddir",
+    "pay": "Ödə",
+
+    "favoriteTitle":"Sizin favoritləriniz",
+    "favoriteDesc":"Sevimli məhsulunuzu almağa tələsin",
+    "emptyFavorite": "Sizin favorit səhifəniz boşdur",
+    "emptyFavoriteDesc": "Sizin favorit səhifənizdə məshul tapılmadı, alişverişə başlamaq üçün 'Alışverişə başla' düyməsinə klik edin",
+
+    "orderDesc":"Bizdən sifariş etdiyinizə görə təşəkkür edirik",
+    "orderDate":"Sifarişin tarixi",
+    "orderCommonPrice":"Ümumi məbləğ",
+    "cancelOrder":"Sifarişi ləğv et",
+    "emptyOrder": "Sizin hələ sifarişləriniz yoxdu",
+
+    "password": "Şifrə",
+    "forgotPass": "Şifrəni unutmusuz ?",
+    "createNewAccout": "Yeni hesab yarat",
+    "confirmPassword": "Şifrəni təsdiqlə",
+    "register": "Qeydiyyat",
+    "restorePassword": "Şifrəni dəyiş",
+    "sendOobCode": "Oob kodu göndər",
+    "changePassword": "Şifrəni dəyiş",
+
+    "notFoundPage":"Səhifə mövcud deyil"
+
+}

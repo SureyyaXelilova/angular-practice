@@ -1,0 +1,58 @@
+<div class="container-fluid" id="products">
+    <div class="child-section-row">
+        <app-client-title [title]="'products'" [description]="'makeupDesc'"></app-client-title>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let product of products">
+                <div class="favorite-row">
+                    <i 
+                        (click)="addToFavorites(product)"
+                        [class.favorited-product]="favoritesService.checkFavoritedProduct(product.id)"
+                        *ngIf="authService.isAuthenticated(); else modalBtnFavorite"
+                    ></i>
+                    <ng-template #modalBtnFavorite>
+                        <i  
+                            data-toggle="modal" 
+                            data-target="#myModal"
+                        ></i>
+                    </ng-template>
+                </div>
+                
+                    <div class="blog-container">
+                        <a [routerLink]="['/product', product.id]">
+                            <div class="blog-img-row">
+                                <img [src]="product.imageUrl" alt="product">
+                            </div>
+                        </a>
+                        <div class="blog-text-row"> 
+                            <div class="product-name-row">
+                                <span class="brand-name">{{product.brandName}}</span>
+                                <span class="product-name">{{product.name}}</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span>{{product.price}} AZN</span>
+                            </div>
+                            <p  
+                                class="btn btn-contact addtocard-btn" 
+                                (click)="addToCard(product)"
+                                *ngIf="authService.isAuthenticated(); else modalBtnAddToCard"
+                            >
+                                {{ 'addToCard' | translate }}
+                            </p>
+                            <ng-template #modalBtnAddToCard>
+                                <p  
+                                    class="btn btn-contact addtocard-btn" 
+                                    data-toggle="modal" 
+                                    data-target="#myModal"
+                                >
+                                    {{ 'addToCard' | translate }}
+                                </p>
+                            </ng-template>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+        <ng-content></ng-content>
+    </div>
+</div>
+

@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="child-section-row">
+        <app-client-title [title]="'orders'" [description]="'orderDesc'"></app-client-title>
+        <div *ngIf="userOrders.length > 0; else emptyContainer">
+            <div class="row" *ngFor="let order of userOrders">
+                <div class="basket-container col-md-12">
+                    <div class="basket-title-row mlr--15 mb-25">
+                        <div class="row order-info-row">
+                            <div class="col-6 col-md-3">
+                                <p class="order-info-title">{{ 'orderDate' | translate }}</p>
+                                <p>{{order.createdAt | date:'medium'}}</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="order-info-title">{{ 'orderCommonPrice' | translate }}</p>
+                                <p>{{order.price}} AZN</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="order-info-title">{{ 'aboutOrder' | translate }}</p>
+                                <p>{{ordersService.getOrderStatus(order.status)}}</p>
+                            </div>
+                            <div 
+                                class="col-6 col-md-3" 
+                                *ngIf="order.status !== status.Delivered && order.status !== status.CancelledByAdmin && order.status !== status.CancelledByCustomer"
+                            >
+                                <p class="btn btn-contact" (click)="changeOrderStatus(order.id, status.CancelledByCustomer)">
+                                    {{ 'cancelOrder' | translate }}
+                                </p>
+                            </div>
+                            <div 
+                                class="col-6 col-md-3 order-status-img-row" 
+                                *ngIf="order.status === status.Delivered"
+                            >
+                                <img src="../../../assets/images/success-icon-2.png" alt="success-icon">
+                            </div>
+                            <div 
+                                class="col-6 col-md-3 order-status-img-row" 
+                                *ngIf="order.status === status.CancelledByAdmin || order.status === status.CancelledByCustomer"
+                            >
+                                <img src="../../../assets/images/error-icon-2.png" alt="error-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orders-items-container">
+                        <div class="order-item-row" *ngFor="let product of order.products">
+                            <div class="basket-product-container basket-row">
+                                <img [src]="product.imageUrl" alt="order-item-img">
+                                <div class="order-product-info">
+                                    <div class="product-name-row">
+                                        <span class="brand-name">{{product.brandName}}</span>
+                                        <span class="product-name">{{product.name}}</span>
+                                    </div>     
+                                    <p>({{product.quantity}})</p>
+                                    <p class="order-item-price">{{product.price}} AZN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #emptyContainer>
+            <div class="row">
+                <div class="col-md-12 empty-container">
+                    <img src="../../assets/images/heart.svg" alt="heart">
+                    <h3>{{ 'emptyOrder' | translate }}</h3>
+                    <p class="btn btn-contact" [routerLink]="['/products']">
+                        {{ 'emptyBasketBtn' | translate }}
+                    </p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
